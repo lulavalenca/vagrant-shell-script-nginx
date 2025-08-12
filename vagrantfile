@@ -1,0 +1,22 @@
+Vagrant.configure("2") do |config|
+  # Define a box que será usada para criar a VM (Ubuntu 20.04)
+  config.vm.box = "ubuntu/bionic64"
+
+  # Nome da máquina virtual
+  config.vm.hostname = "nginx-vm"
+
+  # Configuração de rede para acessar a VM via IP
+  config.vm.network "private_network", type: "dhcp"
+
+  # Sincronização de pasta (sincronizar pasta local para o diretório do Nginx)
+  config.vm.synced_folder "./site", "/var/www/html"
+
+  # Configuração de recursos da máquina (Memória e CPU)
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "1024"  # 1 GB de RAM
+    vb.cpus = 1         # 1 CPU
+  end
+
+  # Provisionamento via shell script
+  config.vm.provision "shell", path: "provision.sh"
+end
