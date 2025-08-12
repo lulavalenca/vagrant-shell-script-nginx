@@ -1,0 +1,26 @@
+# Ignorar diretórios e arquivos temporários do Vagrant
+.vagrant/
+
+# Ignorar arquivos de configuração específicos do VirtualBox
+*.vbox
+*.vbox-prev
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de chave privada
+.vagrant/machines/*/virtualbox/private_key
+
+# Ignorar arquivos de configurações específicas de IDEs/editors
+.idea/
+.vscode/
+
+# Ignorar arquivos de backup criados por editores de texto
+*~
+*.bak
+
+# Ignorar arquivos de configuração do sistema
+.DS_Store
+Thumbs.db
+
+vagrantfile_2
